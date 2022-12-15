@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_api_flutter_course/consts/global_colors.dart';
-import 'package:store_api_flutter_course/widget/appbar_icons.dart';
+import 'package:store_api_flutter_course/widgets/appbar_icons.dart';
+
+import '../widgets/sale_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -40,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 18,
               ),
               TextField(
@@ -65,6 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: lightIconsColor,
                     )),
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const SaleWidget(),
             ],
           ),
         ),
