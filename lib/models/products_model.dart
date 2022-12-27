@@ -1,6 +1,9 @@
+// ignore_for_file: avoid_print
+
+import 'package:flutter/cupertino.dart';
 import 'package:store_api_flutter_course/models/categories_model.dart';
 
-class ProductsModel {
+class ProductsModel with ChangeNotifier {
   int? id;
   String? title;
   int? price;
@@ -26,7 +29,10 @@ class ProductsModel {
         : null;
     images = json['images'].cast<String>();
   }
-  // static List<ProductsModel> productsFromSnapshot(List productSnapshot){
-
-  // }
+  static List<ProductsModel> productsFromSnapshot(List productSnapshot) {
+    //print("data ${productSnapshot[0]}");
+    return productSnapshot.map((data) {
+      return ProductsModel.fromJson(data);
+    }).toList();
+  }
 }
